@@ -32,6 +32,5 @@ class ExamResultsAssessor
 
 end
 
-ExamResultsAssessor.new({"Mark" => 10, "Ellen" => 65, "Roger" => 20, "Mike" => 70},"65").assess
 
 
