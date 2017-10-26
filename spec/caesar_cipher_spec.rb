@@ -18,7 +18,7 @@ describe CaesarCipher do
 
     context "when string contain mix of special characters and uppercase and lowercase letters" do
 
-      context "and shifted is small" do
+      context "and shift is small" do
         let(:text_to_encrypt) {"@ #BLTgZ"}
         let(:rot) {5}
         it "returns encrypted text" do
@@ -27,7 +27,7 @@ describe CaesarCipher do
         end
       end
 
-      context "and shifted is big" do
+      context "and shift is big" do
         let(:text_to_encrypt) {"@ #BLTgZ"}
         let(:rot) {32}
         it "returns encrypted text" do
@@ -40,7 +40,7 @@ describe CaesarCipher do
 
     context "when string is long and contain number" do
 
-      context "and shifted is small" do
+      context "and shift is small" do
         let(:text_to_encrypt) {"Very long string contain 6 words"}
         let(:rot) {5}
         it "returns encrypted text" do
@@ -49,7 +49,7 @@ describe CaesarCipher do
         end
       end
 
-      context "and shifted is big" do
+      context "and shift is big" do
         let(:text_to_encrypt) {"Very long string contain 6 words"}
         let(:rot) {32}        
         it "returns encrypted text" do
@@ -60,7 +60,7 @@ describe CaesarCipher do
 
     end
 
-    context "when string contain one char and shift has default value" do
+    context "shift has default value" do
       subject do
           CaesarCipher.new("T").perform
       end
