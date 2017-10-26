@@ -4,7 +4,7 @@ describe ExamResultsAssessor do
   
   describe "#assess" do
 
-    subject  do
+    subject do
       ExamResultsAssessor.new(results, success_rate).assess
     end
 
@@ -23,7 +23,8 @@ describe ExamResultsAssessor do
         let(:results) { { "Mark" => 10 } }
         let(:success_rate) { 5 }        
         it "returns one passed and no failed" do
-          expect(subject).to eq({ passed: { "Mark" => 10 }, failed:{} })
+          students_results = { passed: { "Mark" => 10 }, failed:{} }
+          expect(subject).to eq(students_results)
         end        
       end
 
@@ -31,7 +32,8 @@ describe ExamResultsAssessor do
         let(:results) { {"Mark" => 10 } }
         let(:success_rate) { 15 }          
         it "returns all failed exames and no passed" do
-          expect(subject).to eq({ passed: {}, failed:{ "Mark" => 10 } })
+          students_results = { passed: {}, failed:{ "Mark" => 10 } }
+          expect(subject).to eq(students_results)
         end        
       end 
 
@@ -43,7 +45,8 @@ describe ExamResultsAssessor do
         let(:results) { { "Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30 } }
         let(:success_rate) { 12 }        
         it "returns all passed and no failed" do
-          expect(subject).to eq({ passed: { "Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30 }, failed:{} })
+          students_results = { passed: { "Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30 }, failed:{} }
+          expect(subject).to eq(students_results)
         end
       end
 
@@ -51,7 +54,8 @@ describe ExamResultsAssessor do
         let(:results) { { "Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30 } }
         let(:success_rate) { 40 }         
         it "returns all passed and no failed" do
-          expect(subject).to eq({ passed: {}, failed:{"Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30} })
+          students_results = { passed: {}, failed:{"Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30} }
+          expect(subject).to eq(students_results)
         end
       end
 
@@ -59,7 +63,8 @@ describe ExamResultsAssessor do
         let(:results) { { "Mark" => 20, "Ann" => 16, "Cleo" => 14, "Ivo" => 30 } }
         let(:success_rate) { 17 }          
         it "returns all passed and no failed" do
-          expect(subject).to eq({ passed: { "Mark" => 20, "Ivo" => 30}, failed:{ "Ann" => 16, "Cleo" => 14 } })
+          students_results = { passed: { "Mark" => 20, "Ivo" => 30}, failed:{ "Ann" => 16, "Cleo" => 14 } }
+          expect(subject).to eq(students_results)
         end
       end
     end
