@@ -29,8 +29,7 @@ class CaesarCipher
             ascii_number = FIRST_DOWNCASE_LETTER_ASCII
           else 
             ascii_number = ascii_number+1
-          end
-          
+          end          
         end
         
       end
