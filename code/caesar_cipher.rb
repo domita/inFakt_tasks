@@ -20,8 +20,7 @@ class CaesarCipher
             ascii_number = FIRST_UPCASE_LETTER_ASCII
           else
             ascii_number = ascii_number+1
-          end
-          
+          end          
         end
 
         if check_ascii_number_downcase_letter?(ascii_number)
@@ -29,12 +28,11 @@ class CaesarCipher
             ascii_number = FIRST_DOWNCASE_LETTER_ASCII
           else 
             ascii_number = ascii_number+1
-          end
-          
+          end          
         end
         
       end
-      encrypted_text += ascii_number.chr
+
     end
     encrypted_text
   end
